@@ -1,0 +1,22 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Network Administration & Technical Support Staff",
+      "company": "Software Laboratory Center - BINUS University",
+      "period": "Feb 2025 - Present",
+      "location": "West Jakarta",
+      "description": "As a Network Administrator in the Network and Systems division, I manage servers, ensure smooth service operations, and maintain the network cluster, including overseeing the Kubernetes cluster. I've documented the network topology using CDP and LLDP, migrated system applications from Docker to Kubernetes, and implemented CI/CD pipelines with GitHub Actions and Flux CD for code integration and Kubernetes deployment. Additionally, I provide technical support and resolve issues during practicum sessions in the software laboratory.",
+      "technologies": ["Docker", "Kubernetes", "GitHub Actions", "Flux CD", "Nginx", "MikroTik", "Cisco"]
+    },
+    {
+      "id": 2,
+      "title": "Junior Laboratory Assistant",
+      "company": "Software Laboratory Center - BINUS University",
+      "period": "Sep 2023 - Feb 2025",
+      "location": "West Jakarta",
+      "description": "As a Laboratory Assistant, I guided students in technical concepts and real-world applications during practicum sessions. I completed the Tes Progresif Asisten (TPA) program, which covered various areas such as game development, business analysis, web and mobile development, and system & network administration. After my first year, I contributed to assistant training by creating a System & Network Administration case for new recruits, which included a full-stack web app, Docker orchestration, load balancing, and network configuration.",
+      "technologies": ["Unity", "C#", "Electron", "React TypeScript", "Firebase", "Go", "Node.js", "Kotlin", "Express", "Docker", "Nginx", "MikroTik", "Cisco Packet Tracer", "Laravel", "HAProxy", "Docker Swarm"]
+    }
+  ]
+}

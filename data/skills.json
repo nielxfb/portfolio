@@ -1,0 +1,16 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "skills": ["JavaScript", "TypeScript", "Python", "Java", "C#", "Kotlin", "Go", "PHP", "C", "SQL"]
+    },
+    {
+      "name": "Frameworks",
+      "skills": [".NET Core", "Laravel", "Gin", "Node", "Express", "Flask", "React"]
+    },
+    {
+      "name": "Tools & Technologies",
+      "skills": ["Git", "Docker", "Kubernetes", "MySQL", "PostgreSQL", "Firebase"]
+    }
+  ]
+}

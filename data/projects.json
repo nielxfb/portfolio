@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
+      "longDescription": "Comprehensive e-commerce solution featuring user registration, product catalog, shopping cart, secure payment processing via Stripe, order management, and administrative dashboard. Implemented responsive design, search functionality, and inventory management.",
+      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      "category": "Full-Stack",
+      "status": "Completed",
+      "year": "2024",
+      "image": ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
+      "githubUrl": "https://github.com/johndeveloper/ecommerce-platform",
+      "liveUrl": "https://ecommerce-demo.johndeveloper.dev",
+      "featured": false
+    },
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
+      "longDescription": "Comprehensive e-commerce solution featuring user registration, product catalog, shopping cart, secure payment processing via Stripe, order management, and administrative dashboard. Implemented responsive design, search functionality, and inventory management.",
+      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      "category": "Full-Stack",
+      "status": "Completed",
+      "year": "2024",
+      "image": "/placeholder.svg?height=300&width=500",
+      "githubUrl": "https://github.com/johndeveloper/ecommerce-platform",
+      "liveUrl": "https://ecommerce-demo.johndeveloper.dev",
+      "featured": false
+    }
+  ],
+  "categories": ["All", "Full-Stack", "Web App", "Data Visualization", "AI/ML", "Frontend"]
+}

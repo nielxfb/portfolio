@@ -1,0 +1,15 @@
+{
+  "awards": [
+    {
+      "id": 1,
+      "title": "Lorem ipsum",
+      "organization": "Lorem ipsum",
+      "year": "2025",
+      "category": "Lorem ipsum",
+      "description": "Lorem ipsum",
+      "image": "",
+      "certificateUrl": "#",
+      "featured": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "site": {
+    "title": "Daniel Adamlu - Portfolio",
+    "description": "Portfolio of Daniel Adamlu, a Network Administrator & Software Engineer specializing in DevOps, Cloud Infrastructure, and Network Administration.",
+    "url": "https://danieladamlu.my.id",
+    "author": "Daniel Adamlu",
+    "keywords": ["network administrator", "software engineer", "devops", "cloud infrastructure", "portfolio"],
+    "social": {
+      "linkedin": "daniel-adamlu",
+      "email": "daniel.adamlu@outlook.com",
+      "github": "nielxfb"
+    }
+  },
+  "lastUpdated": "2025-09-10",
+  "version": "1.0.0"
+}
