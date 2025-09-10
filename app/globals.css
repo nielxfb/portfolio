@@ -163,6 +163,38 @@
     animation-delay: 0.4s;
   }
 
+  /* Image Animation Utilities */
+  .image-float {
+    animation: floatUp 6s ease-in-out infinite;
+  }
+
+  .image-float-delay {
+    animation: floatUp 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .image-parallax {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .image-parallax:hover {
+    transform: translateZ(0) scale(1.05) rotateY(2deg);
+  }
+
+  .image-slide-fade {
+    transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .image-slide-fade.slide-in {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+
+  .image-slide-fade.slide-out {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+
   
   .contact-icon-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -215,5 +247,36 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes imageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes imageSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.9);
   }
 }

@@ -2,20 +2,16 @@
   "projects": [
     {
       "id": 1,
-      "title": "E-Commerce Platform",
-      "description": "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
-      "longDescription": "Comprehensive e-commerce solution featuring user registration, product catalog, shopping cart, secure payment processing via Stripe, order management, and administrative dashboard. Implemented responsive design, search functionality, and inventory management.",
-      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
-      "category": "Full-Stack",
-      "status": "Completed",
+      "title": "New RESMAN",
+      "description": "New RESMAN (Resource Management) is a web-based application used internally in the Software Laboratory Center to manage assistants' teaching schedules, job allocations, and to find substitutes for teaching purposes. This is the revamped version of the old RESMAN application, which used an outdated technology stack and less maintainable code. It is built using React, .NET Core, Docker, and PostgreSQL. Developed for Research Interest Group (RIG) Program during my second year as a Software Laboratory Assistant.",
+      "technologies": ["React", ".NET Core", "PostgreSQL", "Docker"],
       "year": "2024",
-      "image": ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
-      "githubUrl": "https://github.com/johndeveloper/ecommerce-platform",
-      "liveUrl": "https://ecommerce-demo.johndeveloper.dev",
-      "featured": false
+      "image": ["/resman/1.png", "/resman/2.png", "/resman/3.png", "/resman/4.png", "/resman/5.png"],
+      "githubUrl": "#",
+      "liveUrl": "#"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "E-Commerce Platform",
       "description": "A full-stack e-commerce platform with user authentication, payment processing, and admin dashboard. Built with modern technologies for optimal performance and user experience.",
       "longDescription": "Comprehensive e-commerce solution featuring user registration, product catalog, shopping cart, secure payment processing via Stripe, order management, and administrative dashboard. Implemented responsive design, search functionality, and inventory management.",
@@ -28,6 +24,5 @@
       "liveUrl": "https://ecommerce-demo.johndeveloper.dev",
       "featured": false
     }
-  ],
-  "categories": ["All", "Full-Stack", "Web App", "Data Visualization", "AI/ML", "Frontend"]
+  ]
 }

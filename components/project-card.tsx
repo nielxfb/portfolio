@@ -8,8 +8,6 @@ interface ProjectCardProps {
   title: string
   description: string
   technologies: string[]
-  category: string
-  status: string
   year: string
   image: string | string[]
   githubUrl?: string
@@ -21,8 +19,6 @@ export function ProjectCard({
   title,
   description,
   technologies,
-  category,
-  status,
   year,
   image,
   githubUrl,
@@ -33,11 +29,17 @@ export function ProjectCard({
 
   return (
     <Card
-      className={`bg-card border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1 animate-fade-in ${featured ? "ring-1 ring-accent/20" : ""}`}
+      className={`bg-card border-border hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-2 animate-fade-in group ${featured ? "ring-1 ring-accent/20" : ""}`}
     >
-      <div className="overflow-hidden rounded-t-lg px-6">
-        <ImageCarousel images={images} alt={title} />
-        {featured && <Badge className="absolute top-2 right-2 bg-accent text-accent-foreground">Featured</Badge>}
+      <div className="overflow-hidden rounded-t-lg relative">
+        <div className="transform transition-all duration-500">
+          <ImageCarousel images={images} alt={title} />
+        </div>
+        {featured && (
+          <Badge className="absolute top-3 right-3 bg-accent text-accent-foreground z-10 animate-pulse shadow-lg">
+            Featured
+          </Badge>
+        )}
       </div>
 
       <div className="p-6 pb-0">
