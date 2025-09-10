@@ -10,13 +10,6 @@ export default function ProjectsPage() {
   return (
     <PageLayout>
       <div className="space-y-12">
-        <section className="text-center space-y-4 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold">Projects</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty animate-fade-in animate-stagger-1">
-            A selection of my recent work, showcasing my skills and experience in software development and expertise in infrastructure technology.
-          </p>
-        </section>
-
         <section className="animate-slide-up animate-stagger-2">
           <div className="max-w-4xl mx-auto space-y-8">
             {projects.map((project, index) => (

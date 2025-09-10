@@ -14,14 +14,6 @@ export default function AwardsPage() {
   return (
     <PageLayout>
       <div className="space-y-12">
-        <section className="text-center space-y-4 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold">Awards & Achievements</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty animate-fade-in animate-stagger-1">
-            Recognition and certifications that highlight my professional growth, technical expertise, and contributions
-            to the development community.
-          </p>
-        </section>
-
         <section className="animate-slide-up animate-stagger-2">
           <div className="max-w-4xl mx-auto space-y-8">
             {awards.map((award, index) => (
