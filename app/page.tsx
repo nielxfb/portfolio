@@ -35,13 +35,20 @@ export default function HomePage() {
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto text-pretty animate-fade-in animate-stagger-4">
               {personalData.bio}
             </p>
-            <div className="pt-4 animate-fade-in animate-stagger-4">
+            <div className="flex flex-row items-center justify-center gap-2 pt-4 animate-fade-in animate-stagger-4">
               <Button
                 asChild
                 size="lg"
                 className="bg-accent hover:bg-accent/90 transition-all duration-200 hover:scale-105"
               >
                 <Link href="/projects">View My Work</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                className="bg-accent hover:bg-accent/90 transition-all duration-200 hover:scale-105"
+              >
+                <a href="/Daniel_Adamlu___CV.pdf" download="Daniel_Adamlu_CV.pdf">Download CV</a>
               </Button>
             </div>
           </section>
