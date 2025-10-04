@@ -7,7 +7,6 @@ import Link from "next/link"
 
 // Import JSON data
 import personalData from "@/data/personal.json"
-import experienceData from "@/data/experience.json"
 import skillsData from "@/data/skills.json"
 
 export default function HomePage() {
@@ -47,7 +46,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="space-y-8 animate-slide-up animate-stagger-2">
+          {/* <section className="space-y-8 animate-slide-up animate-stagger-2">
             <h2 className="text-3xl font-bold">Experience</h2>
             <div className="space-y-6">
               {experienceData.experiences.map((experience, index) => (
@@ -63,7 +62,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-          </section>
+          </section> */}
 
           <div className="animate-slide-up animate-stagger-3">
             <SkillsSection categories={skillsData.categories} />
