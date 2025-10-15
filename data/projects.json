@@ -10,11 +10,9 @@
         "/resman/1.png",
         "/resman/2.png",
         "/resman/3.png",
-        "/resman/4.png",
-        "/resman/5.png"
+        "/resman/4.png"
       ],
-      "githubUrl": "#",
-      "liveUrl": "#"
+      "isPrivate": true
     },
     {
       "id": 2,
@@ -30,10 +28,64 @@
         "Docker"
       ],
       "year": "2025",
-      "image": "/placeholder.svg?height=300&width=500",
+      "image": [
+        "/edureach/1.png",
+        "/edureach/2.png",
+        "/edureach/3.png",
+        "/edureach/4.png",
+        "/edureach/5.png",
+        "/edureach/6.png",
+        "/edureach/7.png"
+      ],
       "githubUrl": "https://github.com/orgs/BluejacketsGarudaHacks/repositories",
-      "liveUrl": "https://edureach-frontend.vercel.app",
-      "featured": false
+      "liveUrl": "https://edureach-frontend.vercel.app"
+    },
+    {
+      "id": 3,
+      "title": "Joko Bot",
+      "description": "Joko Bot is a LINE Bot built using Go and LINE Bot SDK, used internally in the Network Administrator and Technical Support Division of the Software Laboratory Center. It helps remind Network Administrators about their daily schedules, working shifts, standby duties, and other important reminders. It also supports remote control for computers (wake up, restart, shutdown),and internet request manager for computer labs",
+      "technologies": [
+        "Go",
+        "LINE Bot SDK",
+        "MySQL"
+      ],
+      "year": "2025",
+      "image": [
+        "/joko-bot/1.jpg",
+        "/joko-bot/2.jpg",
+        "/joko-bot/3.jpg",
+        "/joko-bot/4.jpg",
+        "/joko-bot/5.jpg",
+        "/joko-bot/6.jpg"
+      ],
+      "isPrivate": true
+    },
+    {
+      "id": 4,
+      "title": "NLoy",
+      "description": "NLoy is a shell-based tool that automates the deployment of web applications. It installs dependencies, builds the application, and starts it immediately. It also supports monitoring active deployments and terminating them when they are no longer needed.",
+      "technologies": [
+        "Shell"
+      ],
+      "year": "2025",
+      "image": [
+        "/nloy/1.png",
+        "/nloy/2.png",
+        "/nloy/3.png"
+      ],
+      "githubUrl": "https://github.com/nielxfb/NLoy"
+    },
+    {
+      "id": 5,
+      "title": "NeLtech",
+      "description": "NeLtech is a simple full-stack application with a React front-end and a Laravel back-end. It is a simple marketplace where user can buy tech-related products. Built using React, Laravel, and MySQL as a simple full-stack project to deploy as a Tes Progresif Asisten (TPA) Case Maker for Junior Laboratory Assistants.",
+      "technologies": [
+        "React",
+        "Laravel",
+        "MySQL"
+      ],
+      "year": "2025",
+      "githubUrl": "https://github.com/nielxfb/NeLtech"
     }
   ]
 }
