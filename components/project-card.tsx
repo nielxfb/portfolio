@@ -12,7 +12,8 @@ interface ProjectCardProps {
   image: string | string[]
   githubUrl?: string
   liveUrl?: string | null
-  featured?: boolean
+  isPrivate?: boolean
+  onImageClick?: (imageUrl: string, alt: string) => void
 }
 
 export function ProjectCard({
@@ -23,24 +24,18 @@ export function ProjectCard({
   image,
   githubUrl,
   liveUrl,
-  featured = false,
+  isPrivate = false,
+  onImageClick,
 }: ProjectCardProps) {
   const images = Array.isArray(image) ? image : [image]
 
   return (
     <Card
-      className={`bg-card border-border hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-2 animate-fade-in group ${featured ? "ring-1 ring-accent/20" : ""}`}
+      className="bg-card border-border hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 animate-fade-in group"
     >
-      <div className="overflow-hidden rounded-t-lg relative">
         <div className="transform transition-all duration-500">
-          <ImageCarousel images={images} alt={title} />
+          <ImageCarousel images={images} alt={title} onImageClick={onImageClick} />
         </div>
-        {featured && (
-          <Badge className="absolute top-3 right-3 bg-accent text-accent-foreground z-10 animate-pulse shadow-lg">
-            Featured
-          </Badge>
-        )}
-      </div>
 
       <div className="p-6 pb-0">
         <div className="flex justify-between items-start mb-4">
@@ -65,6 +60,11 @@ export function ProjectCard({
         </div>
 
         <div className="flex gap-2 pt-2">
+          {isPrivate && (
+            <Badge className="bg-muted text-muted-foreground cursor-default">
+              Private Project
+            </Badge>
+          )}
           {githubUrl && (
             <Button
               variant="outline"
