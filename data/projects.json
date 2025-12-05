@@ -4,7 +4,12 @@
       "id": 1,
       "title": "New RESMAN",
       "description": "New RESMAN (Resource Management) is a web-based application used internally in the Software Laboratory Center to manage assistants' teaching schedules, job allocations, and to find substitutes for teaching purposes. This is the revamped version of the old RESMAN application, which used an outdated technology stack and less maintainable code. It is built using React, .NET Core, Docker, and PostgreSQL. Developed for Research Interest Group (RIG) Program during my second year as a Software Laboratory Assistant.",
-      "technologies": ["React", ".NET Core", "PostgreSQL", "Docker"],
+      "technologies": [
+        "React",
+        ".NET Core",
+        "PostgreSQL",
+        "Docker"
+      ],
       "year": "2024",
       "image": [
         "/resman/1.png",
@@ -43,7 +48,7 @@
     {
       "id": 3,
       "title": "Joko Bot",
-      "description": "Joko Bot is a LINE Bot built using Go and LINE Bot SDK, used internally in the Network Administrator and Technical Support Division of the Software Laboratory Center. It helps remind Network Administrators about their daily schedules, working shifts, standby duties, and other important reminders. It also supports remote control for computers (wake up, restart, shutdown),and internet request manager for computer labs",
+      "description": "Joko Bot is a LINE Bot built using Go and LINE Bot SDK, used internally in the Network Administrator and Technical Support Division of the Software Laboratory Center. It helps remind Network Administrators about their daily schedules, working shifts, standby duties, and other important reminders. It also supports remote control for computers (wake up, restart, shutdown), and internet request manager for computer labs.",
       "technologies": [
         "Go",
         "LINE Bot SDK",
