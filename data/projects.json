@@ -79,18 +79,6 @@
         "/nloy/3.png"
       ],
       "githubUrl": "https://github.com/nielxfb/NLoy"
-    },
-    {
-      "id": 5,
-      "title": "NeLtech",
-      "description": "NeLtech is a simple full-stack application with a React front-end and a Laravel back-end. It is a simple marketplace where user can buy tech-related products. Built using React, Laravel, and MySQL as a simple full-stack project to deploy as a Tes Progresif Asisten (TPA) Case Maker for Junior Laboratory Assistants.",
-      "technologies": [
-        "React",
-        "Laravel",
-        "MySQL"
-      ],
-      "year": "2025",
-      "githubUrl": "https://github.com/nielxfb/NeLtech"
     }
   ]
 }

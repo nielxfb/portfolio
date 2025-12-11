@@ -11,6 +11,24 @@
     },
     {
       "id": 2,
+      "title": "PPTI Teaching Assistant - Computer Networks",
+      "company": "Program Pendidikan Teknik Informatika - BCA Learning Institute",
+      "period": "Jun 2024 - Nov 2024",
+      "location": "Sentul City",
+      "description": "Delivered lectures and hands-on practicums in Computer Networks, covering subnetting, routing, ACLs, and troubleshooting, and reinforced learning through practicum-based assessments.",
+      "technologies": ["Cisco Packet Tracer", "Computer Networks"]
+    },
+    {
+      "id": 3,
+      "title": "PPTI Teaching Assistant - Data Structures",
+      "company": "Program Pendidikan Teknik Informatika - BCA Learning Institute",
+      "period": "Jan 2024 - May 2024",
+      "location": "Sentul City",
+      "description": "Taught core data structure concepts including linked lists, stacks, queues, hash tables, BSTs, AVL trees, heaps, and graphs, reinforcing understanding through reviews and practicum-based assessments.",
+      "technologies": ["C++", "Algorithms", "Data Structures"]
+    },
+    {
+      "id": 4,
       "title": "Junior Laboratory Assistant",
       "company": "Software Laboratory Center - BINUS University",
       "period": "Sep 2023 - Feb 2025",
