@@ -48,7 +48,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-accent hover:bg-accent/90 transition-all duration-200 hover:scale-105"
               >
-                <a href="/Daniel_Adamlu___CV.pdf" download="Daniel_Adamlu_CV.pdf">Download CV</a>
+                <a href="/Daniel Adamlu.pdf" download="Daniel Adamlu.pdf">Download CV</a>
               </Button>
             </div>
           </section>
