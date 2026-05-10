@@ -10,21 +10,19 @@ import projectsData from "@/data/projects.json"
 
 const ALL = "All"
 
+interface ModalState {
+  images: string[]
+  currentIndex: number
+  alt: string
+}
+
 export default function ProjectsPage() {
   const projects = projectsData.projects
   const categories = [ALL, ...Array.from(new Set(projects.map((p) => p.category)))]
   const [activeCategory, setActiveCategory] = useState(ALL)
-  const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null)
+  const [modal, setModal] = useState<ModalState | null>(null)
 
   const filtered = activeCategory === ALL ? projects : projects.filter((p) => p.category === activeCategory)
-
-  const handleImageClick = (imageUrl: string, alt: string) => {
-    setModalImage({ src: imageUrl, alt })
-  }
-
-  const closeModal = () => {
-    setModalImage(null)
-  }
 
   return (
     <>
@@ -48,7 +46,7 @@ export default function ProjectsPage() {
                     githubUrl={project.githubUrl}
                     liveUrl={project.liveUrl}
                     isPrivate={project.isPrivate}
-                    onImageClick={handleImageClick}
+                    onImageClick={(images, currentIndex, alt) => setModal({ images, currentIndex, alt })}
                   />
                 </div>
               ))}
@@ -57,14 +55,13 @@ export default function ProjectsPage() {
         </div>
       </PageLayout>
 
-      {modalImage && (
-        <ImageModal
-          isOpen={!!modalImage}
-          onClose={closeModal}
-          src={modalImage.src}
-          alt={modalImage.alt}
-        />
-      )}
+      <ImageModal
+        isOpen={!!modal}
+        onClose={() => setModal(null)}
+        images={modal?.images ?? []}
+        initialIndex={modal?.currentIndex ?? 0}
+        alt={modal?.alt ?? ""}
+      />
     </>
   )
 }

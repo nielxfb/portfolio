@@ -1,128 +1,137 @@
-"use client";
+"use client"
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useCallback, useEffect, useState } from "react"
+import useEmblaCarousel from "embla-carousel-react"
+import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface ImageCarouselProps {
-  images: string[];
-  alt: string;
-  onImageClick?: (imageUrl: string, alt: string) => void;
+  images: string[]
+  alt: string
+  onImageClick?: (images: string[], currentIndex: number) => void
 }
 
 export function ImageCarousel({ images, alt, onImageClick }: ImageCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true })
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const changeImage = (newIndex: number) => {
-    if (isTransitioning) return;
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setCurrentIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
 
-    setIsTransitioning(true);
-    setCurrentIndex(newIndex);
+  useEffect(() => {
+    if (!emblaApi) return
+    onSelect()
+    emblaApi.on("select", onSelect)
+    return () => { emblaApi.off("select", onSelect) }
+  }, [emblaApi, onSelect])
 
-    setTimeout(() => setIsTransitioning(false), 300);
-  };
+  const scrollPrev = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    emblaApi?.scrollPrev()
+  }
 
-  const handleImageClick = () => {
-    if (onImageClick && images[currentIndex]) {
-      onImageClick(images[currentIndex], alt);
-    }
-  };
+  const scrollNext = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    emblaApi?.scrollNext()
+  }
+
+  const scrollTo = (e: React.MouseEvent, index: number) => {
+    e.stopPropagation()
+    emblaApi?.scrollTo(index)
+  }
 
   if (!images || images.length === 0) {
     return (
       <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
         <span className="text-muted-foreground">No images available</span>
       </div>
-    );
+    )
   }
 
   if (images.length === 1) {
     return (
       <div
-        className="aspect-video rounded-lg overflow-hidden group cursor-pointer"
-        onClick={() => onImageClick?.(images[0], alt)}
+        className="relative aspect-video rounded-lg overflow-hidden group cursor-pointer"
+        onClick={() => onImageClick?.(images, 0)}
       >
         <img
           src={images[0] || "/placeholder.svg"}
           alt={alt}
-          className="w-full h-full object-cover object-top transition-all duration-700 ease-out group-hover:brightness-110"
+          className="w-full h-full object-cover object-top transition-all duration-500 group-hover:brightness-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="pointer-events-none absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-black/50 rounded-full p-1.5">
+            <Maximize2 className="h-3.5 w-3.5 text-white" />
+          </div>
+        </div>
       </div>
-    );
+    )
   }
-
-  const nextImage = () => {
-    const newIndex = (currentIndex + 1) % images.length;
-    changeImage(newIndex);
-  };
-
-  const prevImage = () => {
-    const newIndex = (currentIndex - 1 + images.length) % images.length;
-    changeImage(newIndex);
-  };
 
   return (
     <div className="relative aspect-video rounded-lg overflow-hidden group">
+      {/* Embla viewport */}
       <div
-        className="relative w-full h-full cursor-pointer"
-        onClick={handleImageClick}
+        ref={emblaRef}
+        className="h-full overflow-hidden cursor-pointer"
+        onClick={() => onImageClick?.(images, currentIndex)}
       >
+        <div className="flex h-full">
           {images.map((image, index) => (
+            <div key={index} className="relative flex-[0_0_100%] h-full">
               <img
-                key={index}
                 src={image || "/placeholder.svg"}
                 alt={`${alt} - Image ${index + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 ease-out ${
-                  index === currentIndex
-                    ? "opacity-100 translate-x-0 scale-100"
-                    : index < currentIndex
-                    ? "opacity-0 -translate-x-full scale-95"
-                    : "opacity-0 translate-x-full scale-95"
-                } ${isTransitioning ? "transition-all duration-500" : ""}`}
+                className="w-full h-full object-cover object-top"
               />
-          ))}
-          {/* Animated overlay for smooth transitions */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-
-        {currentIndex > 0 && (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white transition-all duration-300 hover:scale-110 hover:-translate-x-1"
-            onClick={prevImage}
-          >
-            <ChevronLeft className="h-4 w-4 transition-transform duration-200 hover:-translate-x-0.5" />
-          </Button>
-        )}
-
-        {currentIndex < images.length - 1 && (
-          <Button
-            variant="ghost"
-            size="icon"
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white transition-all duration-300 hover:scale-110 hover:translate-x-1"
-            onClick={nextImage}
-          >
-            <ChevronRight className="h-4 w-4 transition-transform duration-200 hover:translate-x-0.5" />
-          </Button>
-        )}
-
-        {/* Dots indicator */}
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 transition-opacity duration-300">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`w-2 h-2 rounded-full transition-all duration-300 hover:scale-125 ${
-                index === currentIndex
-                  ? "bg-white scale-110"
-                  : "bg-white/50 hover:bg-white/75"
-              }`}
-              onClick={() => changeImage(index)}
-            />
+            </div>
           ))}
         </div>
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      {/* Expand hint */}
+      <div className="pointer-events-none absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="bg-black/50 rounded-full p-1.5">
+          <Maximize2 className="h-3.5 w-3.5 text-white" />
+        </div>
+      </div>
+
+      {/* Prev / Next */}
+      <Button
+        variant="ghost"
+        size="icon"
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white transition-all duration-200 hover:scale-110"
+        onClick={scrollPrev}
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white transition-all duration-200 hover:scale-110"
+        onClick={scrollNext}
+      >
+        <ChevronRight className="h-4 w-4" />
+      </Button>
+
+      {/* Dot indicators */}
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-white scale-110" : "bg-white/50 hover:bg-white/75"
+            }`}
+            onClick={(e) => scrollTo(e, index)}
+          />
+        ))}
+      </div>
     </div>
-  );
+  )
 }

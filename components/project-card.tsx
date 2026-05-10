@@ -13,7 +13,7 @@ interface ProjectCardProps {
   githubUrl?: string
   liveUrl?: string | null
   isPrivate?: boolean
-  onImageClick?: (imageUrl: string, alt: string) => void
+  onImageClick?: (images: string[], currentIndex: number, alt: string) => void
 }
 
 export function ProjectCard({
@@ -34,7 +34,11 @@ export function ProjectCard({
       className="bg-card border-border hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 animate-fade-in group"
     >
         <div className="transform transition-all duration-500">
-          <ImageCarousel images={images} alt={title} onImageClick={onImageClick} />
+          <ImageCarousel
+            images={images}
+            alt={title}
+            onImageClick={onImageClick ? (imgs, idx) => onImageClick(imgs, idx, title) : undefined}
+          />
         </div>
 
       <div className="p-6 pb-0">
