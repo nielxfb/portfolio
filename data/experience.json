@@ -2,15 +2,24 @@
   "experiences": [
     {
       "id": 1,
+      "title": "Site Reliability Engineer",
+      "company": "GDP Labs",
+      "period": "Mar 2026 - Present",
+      "location": "South Jakarta",
+      "description": "As a Site Reliability Engineer at GDP Labs, I design and implement CI/CD pipelines, troubleshoot build failures, and establish workflows to streamline deployment processes. I leverage AI-powered agents to enhance diagnostic efficiency and capture knowledge to prevent recurring issues. I also provision and test cloud infrastructure — including Kubernetes clusters — for scalability and reliability under varying workloads, and maintain comprehensive technical documentation covering system architecture and infrastructure to support the engineering team.",
+      "technologies": ["AWS", "GCP", "Kubernetes", "Docker", "Terraform"]
+    },
+    {
+      "id": 2,
       "title": "Network Administration & Technical Support Staff",
       "company": "Software Laboratory Center - BINUS University",
-      "period": "Feb 2025 - Present",
+      "period": "Mar 2025 - Feb 2026",
       "location": "West Jakarta",
       "description": "As a Network Administrator in the Network and Systems division, I manage servers, ensure smooth service operations, and maintain the network cluster, including overseeing the Kubernetes cluster. I've documented the network topology using CDP and LLDP, migrated system applications from Docker to Kubernetes, and implemented CI/CD pipelines with GitHub Actions and Flux CD for code integration and Kubernetes deployment. Additionally, I provide technical support and resolve issues during practicum sessions in the software laboratory.",
       "technologies": ["Docker", "Kubernetes", "GitHub Actions", "Flux CD", "Nginx", "MikroTik", "Cisco"]
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "PPTI Teaching Assistant - Computer Networks",
       "company": "Program Pendidikan Teknik Informatika - BCA Learning Institute",
       "period": "Jun 2024 - Nov 2024",
@@ -19,7 +28,7 @@
       "technologies": ["Cisco Packet Tracer", "Computer Networks"]
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "PPTI Teaching Assistant - Data Structures",
       "company": "Program Pendidikan Teknik Informatika - BCA Learning Institute",
       "period": "Jan 2024 - May 2024",
@@ -28,7 +37,7 @@
       "technologies": ["C++", "Algorithms", "Data Structures"]
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Junior Laboratory Assistant",
       "company": "Software Laboratory Center - BINUS University",
       "period": "Sep 2023 - Feb 2025",

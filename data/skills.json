@@ -1,16 +1,20 @@
 {
   "categories": [
     {
-      "name": "Languages",
-      "skills": ["JavaScript", "TypeScript", "Python", "Java", "C#", "Kotlin", "Go", "PHP", "C", "SQL"]
+      "name": "Cloud Computing",
+      "skills": ["AWS", "GCP", "Azure"]
     },
     {
-      "name": "Frameworks",
-      "skills": [".NET Core", "Laravel", "Gin", "Node", "Express", "Flask", "React"]
+      "name": "Infrastructure & IaC",
+      "skills": ["Terraform", "Ansible"]
     },
     {
-      "name": "Tools & Technologies",
-      "skills": ["Git", "Docker", "Kubernetes", "MySQL", "PostgreSQL", "Firebase"]
+      "name": "Container & Orchestration",
+      "skills": ["Kubernetes", "Docker", "Podman"]
+    },
+    {
+      "name": "Observability",
+      "skills": ["Prometheus", "Grafana", "SigNoz"]
     }
   ]
 }
