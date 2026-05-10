@@ -5,7 +5,7 @@ import personalData from "@/data/personal.json"
 
 export function FloatingContacts() {
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 space-y-4">
+    <div className="hidden md:flex md:flex-col fixed right-6 top-1/2 -translate-y-1/2 z-40 gap-4">
       <div className="contact-icon-hover group relative">
         <a
           href={`mailto:${personalData.email}`}

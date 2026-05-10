@@ -2,6 +2,7 @@
   "projects": [
     {
       "id": 1,
+      "category": "Web App",
       "title": "New RESMAN",
       "description": "New RESMAN (Resource Management) is a web-based application used internally in the Software Laboratory Center to manage assistants' teaching schedules, job allocations, and to find substitutes for teaching purposes. This is the revamped version of the old RESMAN application, which used an outdated technology stack and less maintainable code. It is built using React, .NET Core, Docker, and PostgreSQL. Developed for Research Interest Group (RIG) Program during my second year as a Software Laboratory Assistant.",
       "technologies": [
@@ -21,6 +22,7 @@
     },
     {
       "id": 2,
+      "category": "Web App",
       "title": "EduReach",
       "description": "EduReach is an AI-powered education platform that summarizes PDF documents into traditional Indonesian languages like Javanese, Sundanese, and Batak — making learning more accessible in rural areas. Built in 30 hours, the app uses React, .NET Core, PostgreSQL, FastAPI, and Docker, and is deployed on Vercel and Google Cloud.",
       "technologies": [
@@ -47,6 +49,7 @@
     },
     {
       "id": 3,
+      "category": "Bot",
       "title": "Joko Bot",
       "description": "Joko Bot is a LINE Bot built using Go and LINE Bot SDK, used internally in the Network Administrator and Technical Support Division of the Software Laboratory Center. It helps remind Network Administrators about their daily schedules, working shifts, standby duties, and other important reminders. It also supports remote control for computers (wake up, restart, shutdown), and internet request manager for computer labs.",
       "technologies": [
@@ -67,6 +70,7 @@
     },
     {
       "id": 4,
+      "category": "DevOps Tool",
       "title": "NLoy",
       "description": "NLoy is a shell-based tool that automates the deployment of web applications. It installs dependencies, builds the application, and starts it immediately. It also supports monitoring active deployments and terminating them when they are no longer needed.",
       "technologies": [

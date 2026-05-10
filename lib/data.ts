@@ -4,6 +4,7 @@ import experienceData from "@/data/experience.json"
 import skillsData from "@/data/skills.json"
 import projectsData from "@/data/projects.json"
 import awardsData from "@/data/awards.json"
+import educationData from "@/data/education.json"
 
 // Type definitions for better TypeScript support
 export interface PersonalInfo {
@@ -51,12 +52,18 @@ export interface Award {
   id: number
   title: string
   organization: string
-  year: string
-  category: string
+  date: string
   description: string
-  image: string
-  certificateUrl?: string
-  featured: boolean
+}
+
+export interface Education {
+  id: number
+  institution: string
+  degree: string
+  location: string
+  period: string
+  gpa: string
+  thesis: string
 }
 
 // Data getters with type safety
@@ -75,21 +82,4 @@ export const getProjectsByCategory = (category: string): Project[] =>
 
 export const getAwards = (): Award[] => awardsData.awards
 
-export const getFeaturedAwards = (): Award[] => awardsData.awards.filter((award) => award.featured)
-
-export const getAwardsByCategory = (category: string): Award[] =>
-  category === "All" ? awardsData.awards : awardsData.awards.filter((award) => award.category === category)
-
-// Utility functions
-export const getTotalProjects = (): number => projectsData.projects.length
-
-export const getCompletedProjects = (): number =>
-  projectsData.projects.filter((project) => project.status === "Completed").length
-
-export const getTotalTechnologies = (): number =>
-  new Set(projectsData.projects.flatMap((project) => project.technologies)).size
-
-export const getTotalAwards = (): number => awardsData.awards.length
-
-export const getCertifications = (): number =>
-  awardsData.awards.filter((award) => award.category === "Certifications").length
+export const getEducation = (): Education[] => educationData.education

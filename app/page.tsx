@@ -1,13 +1,15 @@
 import { PageLayout } from "@/components/page-layout"
-import { ExperienceCard } from "@/components/experience-card"
 import { SkillsSection } from "@/components/skills-section"
+import { EducationSection } from "@/components/education-section"
+import { AwardsSection } from "@/components/awards-section"
 import { FloatingContacts } from "@/components/floating-contacts"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-// Import JSON data
 import personalData from "@/data/personal.json"
 import skillsData from "@/data/skills.json"
+import educationData from "@/data/education.json"
+import awardsData from "@/data/awards.json"
 
 export default function HomePage() {
   return (
@@ -23,7 +25,6 @@ export default function HomePage() {
                   alt={`${personalData.name} profile picture`}
                   className="w-40 h-40 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary/20 shadow-2xl transition-all duration-300 hover:scale-105"
                 />
-                {/* <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-secondary/20"></div> */}
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-balance animate-fade-in animate-stagger-2">
@@ -53,26 +54,16 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* <section className="space-y-8 animate-slide-up animate-stagger-2">
-            <h2 className="text-3xl font-bold">Experience</h2>
-            <div className="space-y-6">
-              {experienceData.experiences.map((experience, index) => (
-                <div key={experience.id} className={`animate-fade-in animate-stagger-${Math.min(index + 1, 4)}`}>
-                  <ExperienceCard
-                    title={experience.title}
-                    company={experience.company}
-                    period={experience.period}
-                    location={experience.location}
-                    description={experience.description}
-                    technologies={experience.technologies}
-                  />
-                </div>
-              ))}
-            </div>
-          </section> */}
+          <div className="animate-slide-up animate-stagger-2">
+            <SkillsSection categories={skillsData.categories} />
+          </div>
 
           <div className="animate-slide-up animate-stagger-3">
-            <SkillsSection categories={skillsData.categories} />
+            <EducationSection education={educationData.education} />
+          </div>
+
+          <div className="animate-slide-up animate-stagger-4">
+            <AwardsSection awards={awardsData.awards} />
           </div>
         </div>
       </PageLayout>

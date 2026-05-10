@@ -15,7 +15,7 @@
       "company": "Software Laboratory Center - BINUS University",
       "period": "Mar 2025 - Feb 2026",
       "location": "West Jakarta",
-      "description": "As a Network Administrator in the Network and Systems division, I manage servers, ensure smooth service operations, and maintain the network cluster, including overseeing the Kubernetes cluster. I've documented the network topology using CDP and LLDP, migrated system applications from Docker to Kubernetes, and implemented CI/CD pipelines with GitHub Actions and Flux CD for code integration and Kubernetes deployment. Additionally, I provide technical support and resolve issues during practicum sessions in the software laboratory.",
+      "description": "Mapped the organization's full network topology using CDP and LLDP. Built CI/CD pipelines with GitHub Actions and FluxCD for GitOps-driven Kubernetes deployments, and led the migration from Docker-based hosting to a fully managed Kubernetes cluster. Designed a High Availability Galera database cluster for mission-critical applications, ensuring redundancy and zero-downtime failovers. Re-engineered the internal LINE Bot from an unstructured Express.js implementation into a modular Go service, improving scalability and performance. Also managed internal web applications and standardized deployment workflows for stable, reliable releases.",
       "technologies": ["Docker", "Kubernetes", "GitHub Actions", "Flux CD", "Nginx", "MikroTik", "Cisco"]
     },
     {

@@ -3,14 +3,20 @@
 import { useState } from "react"
 import { PageLayout } from "@/components/page-layout"
 import { ProjectCard } from "@/components/project-card"
+import { ProjectFilter } from "@/components/project-filter"
 import { ImageModal } from "@/components/image-modal"
 
-// Import JSON data
 import projectsData from "@/data/projects.json"
+
+const ALL = "All"
 
 export default function ProjectsPage() {
   const projects = projectsData.projects
+  const categories = [ALL, ...Array.from(new Set(projects.map((p) => p.category)))]
+  const [activeCategory, setActiveCategory] = useState(ALL)
   const [modalImage, setModalImage] = useState<{ src: string; alt: string } | null>(null)
+
+  const filtered = activeCategory === ALL ? projects : projects.filter((p) => p.category === activeCategory)
 
   const handleImageClick = (imageUrl: string, alt: string) => {
     setModalImage({ src: imageUrl, alt })
@@ -26,7 +32,12 @@ export default function ProjectsPage() {
         <div className="space-y-12">
           <section className="animate-slide-up animate-stagger-2">
             <div className="max-w-4xl mx-auto space-y-8">
-              {projects.map((project, index) => (
+              <ProjectFilter
+                categories={categories}
+                activeCategory={activeCategory}
+                onCategoryChange={setActiveCategory}
+              />
+              {filtered.map((project, index) => (
                 <div key={project.id} className={`animate-fade-in animate-stagger-${Math.min(index + 1, 4)}`}>
                   <ProjectCard
                     title={project.title}
@@ -45,7 +56,7 @@ export default function ProjectsPage() {
           </section>
         </div>
       </PageLayout>
-      
+
       {modalImage && (
         <ImageModal
           isOpen={!!modalImage}

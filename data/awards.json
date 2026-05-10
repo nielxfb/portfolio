@@ -2,14 +2,31 @@
   "awards": [
     {
       "id": 1,
-      "title": "Lorem ipsum",
-      "organization": "Lorem ipsum",
-      "year": "2025",
-      "category": "Lorem ipsum",
-      "description": "Lorem ipsum",
-      "image": "",
-      "certificateUrl": "#",
-      "featured": true
+      "title": "AI Impact Challenge Winner",
+      "organization": "GDP Labs",
+      "date": "Apr 2026",
+      "description": "Developed AI-powered agents that improved troubleshooting speed and diagnostic accuracy, enabling the team to reduce repeated issues through systematic knowledge capture."
+    },
+    {
+      "id": 2,
+      "title": "Best Research Interest Group Leader – Odd 2024/2025",
+      "organization": "Software Laboratory Center, BINUS University",
+      "date": "Aug 2025",
+      "description": "Led a Research Interest Group to design and implement a Desktop Sharing system, optimizing performance and efficiency to enhance the computer laboratory learning experience."
+    },
+    {
+      "id": 3,
+      "title": "Best Research Interest Group – Even 2024/2025",
+      "organization": "Software Laboratory Center, BINUS University",
+      "date": "Aug 2025",
+      "description": "Recognized for designing and implementing a High Availability Galera Database Cluster that strengthened the organization's backend infrastructure and improved system resilience."
+    },
+    {
+      "id": 4,
+      "title": "Best Performing Assistant Diploma – Even 2023/2024",
+      "organization": "Software Laboratory Center, BINUS University",
+      "date": "Aug 2024",
+      "description": "Awarded as the top-performing assistant among 20 candidates for outstanding contributions, reliability, and excellence in supporting laboratory operations."
     }
   ]
 }
